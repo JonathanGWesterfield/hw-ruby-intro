@@ -22,9 +22,6 @@ end
 # @param [Array] Array of integers
 # @return [Integer] Sum of the 2 largest numbers
 def max_2_sum arr
-  first = 0
-  second = 0
-
 	if arr.size <= 0
 		return 0
 	end
@@ -33,22 +30,9 @@ def max_2_sum arr
 		return arr[0]
 	end
 
-  if arr[0] > arr[1]
-    first = arr[0]
-    second = arr[1]
-  else
-    first = arr[1]
-    second = arr[0]
-  end
-
-  for i in arr
-    if i > first
-      second = first
-      first = i
-    elsif i > second and i != first
-      second = 1
-		end
-  end
+  ar = arr.sort
+  first = ar[-1]
+  second = ar[-2]
 
   return (first + second)
 end
